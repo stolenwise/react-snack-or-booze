@@ -11,6 +11,8 @@ function Home() {
               Welcome to Silicon Valley's premier dive cafe!
             </h3>
           </CardTitle>
+          <FoodMenu># Food Items</FoodMenu>
+          <
         </CardBody>
       </Card>
     </section>

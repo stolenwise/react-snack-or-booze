@@ -6,9 +6,15 @@ Answer the following questions below:
 
 - What is a single page application?
 
+  The single page application is the application that is running on the client side. It only loads an HTML page once and updates content dynamically. It does not require full page reloads. This allows for a faster and smoother user experience.
+
 - What are some differences between client side and server side routing?
 
+
+
 - What are two ways of handling redirects with React Router? When would you use each?
+
+
 
 - What are two different ways to handle page-not-found user experiences using React Router? 
 
