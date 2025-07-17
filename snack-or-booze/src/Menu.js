@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./FoodMenu.css";
+import "./Menu.css";
 import {
   Card,
   CardBody,
@@ -10,7 +10,8 @@ import {
   ListGroupItem
 } from "reactstrap";
 
-function Menu ({ items, type }) {
+function Menu ({ items = [], type = "" }) {
+  if (!items.length || !type) return <p>Loading menu...</p>;
   return (
     <section className="col-md-4">
       <Card>
@@ -26,6 +27,7 @@ function Menu ({ items, type }) {
           <ListGroup>
             {items.map(item => (
               <Link to={`/${type}/${item.id}`} key={item.id}>
+              
                 <ListGroupItem>{item.name}</ListGroupItem>
               </Link>
             ))}

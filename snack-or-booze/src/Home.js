@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, CardBody, CardTitle } from "reactstrap";
+import Menu from "./Menu"
 
 function Home() {
   return (
@@ -11,8 +12,7 @@ function Home() {
               Welcome to Silicon Valley's premier dive cafe!
             </h3>
           </CardTitle>
-          <FoodMenu># Food Items</FoodMenu>
-          <
+          <Menu># Food Items</Menu>
         </CardBody>
       </Card>
     </section>

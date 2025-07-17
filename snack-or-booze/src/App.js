@@ -6,20 +6,38 @@ import SnackOrBoozeApi from "./Api";
 import NavBar from "./NavBar";
 import { Route, Switch } from "react-router-dom";
 import Menu from "./Menu";
+import MenuItem from "./MenuItem";
 import Snack from "./MenuItem";
+import axios from "axios";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [snacks, setSnacks] = useState([]);
+  const [drinks, setDrinks] = useState([]);
 
   useEffect(() => {
-    async function getSnacks() {
+    async function getItems() {
       let snacks = await SnackOrBoozeApi.getSnacks();
+      let drinks = await SnackOrBoozeApi.getDrinks();
       setSnacks(snacks);
+      setDrinks(drinks);
       setIsLoading(false);
     }
-    getSnacks();
+    getItems();
   }, []);
+
+  const addItem = async (newItem) => {
+    const { type, ...data } = newItem;
+    const addedItem = await SnackOrBoozeApi.addItem(type, data);
+  
+    if (type === "snacks") {
+      setSnacks(s => [...s, addedItem]);
+    } else {
+      setDrinks(d => [...d, addedItem]);
+    }
+  };
+  
+
 
   if (isLoading) {
     return <p>Loading &hellip;</p>;
@@ -36,6 +54,9 @@ function App() {
             </Route>
             <Route exact path="/snacks">
               <Menu snacks={snacks} title="Snacks" />
+            </Route>
+            <Route exact path="/drinks">
+              <Menu drinks={drinks} title="Drinks"/>
             </Route>
             <Route path="/snacks/:id">
               element= {<MenuItem items={snacks} cantFind="/snacks" />}
