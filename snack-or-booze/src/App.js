@@ -30,7 +30,7 @@ function App() {
 
   const addItem = async (newItem) => {
     const { type, ...data } = newItem;
-    const addedItem = await SnackOrBoozeApi.addItem({type, ...data});
+    const addedItem = await SnackOrBoozeApi.addItem({type, ...data}); // adds different types of items, important!
   
     if (type === "snacks") {
       setSnacks(s => [...s, addedItem]);
@@ -57,6 +57,7 @@ function App() {
             <Route path="/snacks/:id" element={<MenuItem items={snacks} cantFind="/snacks" />} />
             <Route path="/drinks/:id" element={<MenuItem items={drinks} cantFind="/drinks" />} />
             <Route path="/add" element={<AddItemForm addItem={addItem} />} />
+            <Route path="*" element={<p>Sorry, page not found.</p>} />
           </Routes>
         </main>
       </BrowserRouter>

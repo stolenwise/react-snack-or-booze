@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import Api from "./Api";
 
+//Sets up form function
 function AddItemForm({ addItem }) {
     const navigate = useNavigate();
 
@@ -14,16 +15,20 @@ function AddItemForm({ addItem }) {
         serve: ""
     });
 
+    //Handle the change
 function handleChange(evt) {
     const { name, value } = evt.target;
     setFormData(f => ({...f, [name]: value}));
 }
+
+// handle the submit
 function handleSubmit(evt) {
     evt.preventDefault();
     addItem(formData);
     navigate(`/${formData.type}`);
   }
 
+  // JSX form for a new snack or drink
 return (
     <Form onSubmit={handleSubmit}>
       <FormGroup>

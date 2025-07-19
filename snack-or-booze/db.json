@@ -27,6 +27,14 @@
       "description": "Crisp!",
       "recipe": "Open can.",
       "serve": "Immediately."
+    },
+    {
+      "type": "drinks",
+      "name": "Cherry Fairy",
+      "description": "complimentary if you're a first time customer",
+      "recipe": "Secret ingredients",
+      "serve": "in a martini glass, fancy",
+      "id": "dxsxvpW"
     }
   ],
   "snacks": [
