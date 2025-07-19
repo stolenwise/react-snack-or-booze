@@ -1,27 +1,30 @@
 import React from "react";
-import { Redirect, useParams } from "react-router-dom";
+import { useParams, Navigate, useNavigate } from "react-router-dom";
 import { Card, CardBody, CardTitle, CardText } from "reactstrap";
 
 function MenuItem({ items, cantFind }) {
   const { id } = useParams();
 
   let item = items.find(item => item.id === id);
-  if (!item) return <Redirect to={cantFind} />;
+  if (!item) return <Navigate to={cantFind} />;
 
   return (
-    <section>
+    <section >
       <Card>
-        <CardBody>
-          <CardTitle className="font-weight-bold text-center">
+        <CardBody className="text-center">
+          <CardTitle tag="h2" className="font-weight-bold">
             {item.name}
           </CardTitle>
-          <CardText className="font-italic">{item.description}</CardText>
-          <p>
-            <b>Recipe:</b> {item.recipe}
-          </p>
-          <p>
-            <b>Serve:</b> {item.serve}
-          </p>
+
+          <CardText>{item.description}</CardText>
+
+          <CardText>
+            <strong>Recipe:</strong> {item.recipe}
+          </CardText>
+
+          <CardText>
+            <small><strong>Serve:</strong> {item.serve}</small>
+          </CardText>
         </CardBody>
       </Card>
     </section>

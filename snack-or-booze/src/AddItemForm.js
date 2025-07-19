@@ -24,7 +24,7 @@ function handleChange(evt) {
 function handleSubmit(evt) {
     evt.preventDefault();
     addItem(formData);
-    navigate(`/${formData.type}`);
+    navigate.push(`/${formData.type}`);
 }
 
 return (

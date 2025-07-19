@@ -11,18 +11,21 @@ import {
 } from "reactstrap";
 
 function Menu ({ items = [], type = "" }) {
-  if (!items.length || !type) return <p>Loading menu...</p>;
+  console.log("Menu items:", items);
+  console.log("Menu type:", type);
+  if (!items.length || !type) return <p>loading menu...</p>;
+  console.log("Menu props check:", { items, type });
   return (
     <section className="col-md-4">
       <Card>
         <CardBody>
-          <CardTitle className="font-weight-bold text-center">
-            {type[0].toUpperCase() + type.slice(1)}
-            Menu
+          <CardTitle className="font-weight-bold text-center"><strong>
+            {type[0].toUpperCase() + type.slice(1) + " "}
+             Menu
+             </strong>
           </CardTitle>
           <CardText>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            Enjoy our refreshments 7 days a week!
           </CardText>
           <ListGroup>
             {items.map(item => (
