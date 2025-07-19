@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import Api from "./Api";
 
 function AddItemForm({ addItem }) {
     const navigate = useNavigate();
@@ -15,26 +16,22 @@ function AddItemForm({ addItem }) {
 
 function handleChange(evt) {
     const { name, value } = evt.target;
-    setFormData(f => ({
-        ...f,
-        [name]: value
-    }));
+    setFormData(f => ({...f, [name]: value}));
 }
-
 function handleSubmit(evt) {
     evt.preventDefault();
     addItem(formData);
-    navigate.push(`/${formData.type}`);
-}
+    navigate(`/${formData.type}`);
+  }
 
 return (
     <Form onSubmit={handleSubmit}>
       <FormGroup>
         <Label for="type">Type</Label>
         <Input type="select" name="type" id="type" value={formData.type} onChange={handleChange}>
-          <option value="snacks">Snack</option>
-          <option value="drinks">Drink</option>
-        </Input>
+  <option value="snacks">Snack</option>
+  <option value="drinks">Drink</option>
+</Input>
       </FormGroup>
       <FormGroup>
         <Label for="name">Name</Label>

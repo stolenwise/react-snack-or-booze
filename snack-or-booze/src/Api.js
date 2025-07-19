@@ -17,10 +17,19 @@ class SnackOrBoozeApi {
   }
 
   static async getDrinks() {
+
     const result = await axios.get(`${BASE_API_URL}/drinks`);
     return result.data
   }
 
+  static async addItem(item) {
+    console.log("addItem received:", item); 
+    if (!item.type || (item.type !== "snacks" && item.type !== "drinks")) {
+      throw new Error(`Invalid item type: ${item.type}`);
+    }
+    const result = await axios.post(`${BASE_API_URL}/${item.type}`, item);
+    return result.data;
+  }
 }
 
 export default SnackOrBoozeApi;

@@ -50,6 +50,14 @@
       "description": "Tart and delicious.",
       "recipe": "Mix arugula, toasted walnuts, and thinly-sliced Parmesan cheese. Dress with lemon and olive oil.",
       "serve": "Place on tiny, precious little plates."
+    },
+    {
+      "type": "snacks",
+      "name": "Booze Burger",
+      "description": "Beer Battered Burger, 4 oz, Cooked to Order",
+      "recipe": "80% ground chuck, pretzel bun, asiago cheese, secret sauce",
+      "serve": "Dive bar plate, with your choice of fries, and a frilly toothpick",
+      "id": "awjbXil"
     }
   ]
 }

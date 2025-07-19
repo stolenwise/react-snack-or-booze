@@ -30,7 +30,7 @@ function App() {
 
   const addItem = async (newItem) => {
     const { type, ...data } = newItem;
-    const addedItem = await SnackOrBoozeApi.addItem(type, data);
+    const addedItem = await SnackOrBoozeApi.addItem({type, ...data});
   
     if (type === "snacks") {
       setSnacks(s => [...s, addedItem]);
