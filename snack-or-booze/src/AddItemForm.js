@@ -40,20 +40,21 @@ return (
       </FormGroup>
       <FormGroup>
         <Label for="name">Name</Label>
-        <Input name="name" value={formData.name} onChange={handleChange} />
-      </FormGroup>
-      <FormGroup>
+        <Input id="name" name="name" value={formData.name} onChange={handleChange} />
+        </FormGroup>
+        <FormGroup>
         <Label for="description">Description</Label>
-        <Input name="description" value={formData.description} onChange={handleChange} />
-      </FormGroup>
-      <FormGroup>
+        <Input id="description" name="description" value={formData.description} onChange={handleChange} />
+        </FormGroup>
+        <FormGroup>
         <Label for="recipe">Recipe</Label>
-        <Input name="recipe" value={formData.recipe} onChange={handleChange} />
-      </FormGroup>
-      <FormGroup>
+        <Input id="recipe" name="recipe" value={formData.recipe} onChange={handleChange} />
+        </FormGroup>
+        <FormGroup>
         <Label for="serve">Serve</Label>
-        <Input name="serve" value={formData.serve} onChange={handleChange} />
-      </FormGroup>
+        <Input id="serve" name="serve" value={formData.serve} onChange={handleChange} />
+        </FormGroup>
+
       <Button>Add Item</Button>
     </Form>
   );
